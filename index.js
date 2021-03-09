@@ -1,25 +1,48 @@
 // Librairies
 
-const Discord = require('discord.js')
+const Discord = require("discord.js");
 
 // Bot Creation and login in
 
-const Bot = new Discord.Client()
-Bot.login('ODE4OTM1OTE2MDAwMTgyMzAy.YEfTgQ.d4OkLgvHBwue9TE8iyvPXmR_H9g')
+const Bot = new Discord.Client();
+Bot.login("ODE4OTM1OTE2MDAwMTgyMzAy.YEfTgQ.d4OkLgvHBwue9TE8iyvPXmR_H9g");
 
-// Ping test 
+Bot.on("ready", () => {
+  console.log(`Bot on`);
+  Bot.user.setPresence({
+    status: "dnd",
+    activity: {
+      name: "utiliser des commandes avec !",
+      type: "PLAYING",
+      url: "https://discord.gg/F6zBWdV6",
+    },
+  });
+});
 
-Bot.on('message', function (message) {
-  if ((message.content === '!ping') || (message.content === '!Ping') || (message.content === '!PING')) {
+// Ping test
+
+Bot.on("message", function (message) {
+  if (
+    message.content === "!ping" ||
+    message.content === "!Ping" ||
+    message.content === "!PING"
+  ) {
     //message.reply('pong')
-    message.channel.send('Pong !')
+    message.channel.send("Pong !");
   }
-})
+});
 
 // Disconnect the bot
 
-Bot.on('message', function (message) {
-  if ((message.content === '!botdc') || (message.content === '!Botdc') || (message.content === '!BOTDC')) {
-    Bot.destroy = Discord.Client()
+Bot.on("message", function (message) {
+  if (
+    message.content === "!botdc" ||
+    message.content === "!Botdc" ||
+    message.content === "!BOTDC" ||
+    message.content === "!botoff" ||
+    message.content === "!Botoff" ||
+    message.content === "!BOTOFF"
+  ) {
+    Bot.destroy = Discord.Client();
   }
-})
+});
