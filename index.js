@@ -19,7 +19,10 @@ Bot.on('message', function (message) {
 // Disconnect the bot
 
 Bot.on('message', function (message) {
-  if ((message.content === '!botdc') || (message.content === '!Botdc') || (message.content === '!BOTDC')) {
+  if ((message.content === '!botoff') || (message.content === '!Botoff') || (message.content === '!BOTOFF')) {
     Bot.destroy = Discord.Client()
   }
 })
+
+// Connect the bot
+
