@@ -1,8 +1,25 @@
+// Librairies
+
 const Discord = require('discord.js')
+
+// Bot Creation and login in
+
 const Bot = new Discord.Client()
-
-// token ODE4OTM1OTE2MDAwMTgyMzAy.YEfTgQ.d4OkLgvHBwue9TE8iyvPXmR_H9g
-
-// Connexion BOT
-
 Bot.login('ODE4OTM1OTE2MDAwMTgyMzAy.YEfTgQ.d4OkLgvHBwue9TE8iyvPXmR_H9g')
+
+// Ping test 
+
+Bot.on('message', function (message) {
+  if ((message.content === '!ping') || (message.content === '!Ping') || (message.content === '!PING')) {
+    //message.reply('pong')
+    message.channel.send('Pong !')
+  }
+})
+
+// Disconnect the bot
+
+Bot.on('message', function (message) {
+  if ((message.content === '!botdc') || (message.content === '!Botdc') || (message.content === '!BOTDC')) {
+    Bot.destroy = Discord.Client()
+  }
+})
