@@ -67,6 +67,11 @@ Bot.on("message", function (message) {
     message.content === "!Botoff" ||
     message.content === "!BOTOFF"
   ) {
-    Bot.destroy = Discord.Client();
+    if(message.member.roles.cache.has("818939835791573043")){
+        Bot.destroy = Discord.Client();
+    } else {
+        message.channel.send("Désolé, tu n'as pas le droit d'utiliser cette commande !");
+      }
+    
   }
 });
