@@ -48,7 +48,7 @@ Bot.on("guildMemberAdd", (member) => {
 
 Si tu as la moindre question, n'hésite pas à la poser à un valet ou à un invité d'honneur/privilégié !
   
-Je t'invite aussi à aller jeter un œil au <#744641300057424002> pour te tenir informé des règles de ce Discord !
+Je t'invite aussi à aller jeter un œil au <#819315814829522954> pour te tenir informé des règles de ce Discord !
   
 Aussi, si tu souhaites obtenir le grade Invité, je te recommande de faire ta présentation dans #présentation en suivant le modèle du règlement !
   
