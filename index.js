@@ -14,7 +14,7 @@ const DisconnectBot = require('./admin/adminFunction/disconnecting')
 //Useful
 const Google = require('./function/useful/google')
 
-// Function Commands
+// Prefix detection
 
 Bot.on("message", message => {
   if (!message.content.startsWith(config.prefix) || message.author.bot) return;
@@ -46,12 +46,15 @@ Bot.on("message", message => {
 // Welcoming members
 
 Bot.on("guildMemberAdd", (member) => {
+
   // Send the message to a designated channel on a server:
   const channel = member.guild.channels.cache.find(
     (ch) => ch.name === "général"
   );
+
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
+
   // Send the message, mentioning the member
   channel.send(`Bienvenue ${member} !
     Si tu as la moindre question, n'hésite pas à la poser à un valet ou à un invité d'honneur/privilégié !
@@ -61,6 +64,7 @@ Bot.on("guildMemberAdd", (member) => {
     Aussi, si tu souhaites obtenir le grade Invité, je te recommande de faire ta présentation dans #présentation en suivant le modèle du règlement !
       
     Bon séjour parmi nous !`);
+    
   member.roles.add("819294604255297566");
 });
 
