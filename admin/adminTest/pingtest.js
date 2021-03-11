@@ -1,7 +1,10 @@
-const discord = require('discord.js');
-const Bot = new discord.Client();
+// Ping test
 
+module.exports = class Pingtest {
 
-  Bot.on("message", function (message) {
-      message.channel.send("Pong !");
-  });
+  static pong (message) {
+    return message.channel.send("Pong !");
+  }
+
+}
+
