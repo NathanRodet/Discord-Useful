@@ -31,7 +31,7 @@ Bot.on("message", message => {
       break;
     // Command DisconnectBOT
     case 'shutdown':
-      DisconnectBot.disconnect(message);
+      DisconnectBot.disconnect(message)
       break;
     case 'google':
       Google.research(message);
