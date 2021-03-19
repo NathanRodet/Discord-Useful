@@ -13,6 +13,7 @@ const Pingtest = require('./admin/adminTest/pingtest')
 const DisconnectBot = require('./admin/adminFunction/disconnecting')
 //Useful
 const Google = require('./function/useful/google')
+const Nitro = require('./function/useful/nitro')
 
 // Prefix detection
 
@@ -45,12 +46,12 @@ Bot.on("message", message => {
 
 // Copying Nitro for Users
 
+// While the prefix is used, we will return the function Nitro
 Bot.on("message", message => {
   if (!message.content.startsWith(config.nitro) || message.author.bot) return;
-  let messageUser = 0;
-  messageUser = message.content.slice(config.nitro.length)
-  message.delete()
-  return message.channel.send(`${message.author} a dit : `+messageUser)
+
+  // This one will make the bot tagging you and replying a message that contains the content of the message you posted.
+  Nitro.nitroReply(message, config);
 })
 
 // Welcoming members
