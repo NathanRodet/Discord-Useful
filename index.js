@@ -7,7 +7,7 @@ const config = require('./config.json')
 // Bot Creation
 const Bot = new Discord.Client()
 
-// Import fonction
+// Import function
 //Admin
 const Pingtest = require('./admin/adminTest/pingtest')
 const DisconnectBot = require('./admin/adminFunction/disconnecting')
@@ -36,11 +36,21 @@ Bot.on("message", message => {
     case 'google':
       Google.research(message);
       break;
-
+      
     // If the command do not correspond
     default:
       return message.channel.send(`Oops, il y a un problème car cette commande est inconnue, ${message.author}!`)
   }
+})
+
+// Copying Nitro for Users
+
+Bot.on("message", message => {
+  if (!message.content.startsWith(config.nitro) || message.author.bot) return;
+  let messageUser = 0;
+  messageUser = message.content.slice(config.nitro.length)
+  message.delete()
+  return message.channel.send(`${message.author} a dit : `+messageUser)
 })
 
 // Welcoming members
